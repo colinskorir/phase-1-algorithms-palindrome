@@ -1,25 +1,24 @@
-function isPalindrome(word) {
-  // Write your algorithm here
+function isPalindrome(string) {
+  const len = string.length;
+  for (let i = 0; i < Math.floor(len / 2); i++) {
+      if (string[i] !== string[len - 1 - i]) {
+          return false;
+      }
+  }
+  return true;
 }
+    // Get the length of the string
+    // Loop through half the string
+    // Compare character at start position with character at end position
+    // If any don't match, return false
+    // If we get through all comparisons, return true
 
-/* 
-  Add your pseudocode here
-*/
-
-/*
-  Add written explanation of your solution here
-*/
-
-// You can run `node index.js` to view these console logs
-if (require.main === module) {
-  // add your own custom tests in here
-  console.log("Expecting: true");
-  console.log("=>", isPalindrome("racecar"));
-
-  console.log("");
-
-  console.log("Expecting: false");
-  console.log("=>", isPalindrome("robot"));
-}
-
+// Export the function
 module.exports = isPalindrome;
+
+// Optional: Keep your test cases for local testing
+console.log(isPalindrome("abba"));     // true
+console.log(isPalindrome("racecar"));  // true
+console.log(isPalindrome("a"));        // true
+console.log(isPalindrome("robot"));    // false
+console.log(isPalindrome("ab"));       // false
